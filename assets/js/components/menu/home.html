@@ -1,0 +1,31 @@
+<div>
+    <div class="menu-principal ">
+
+
+        <header class="grid " :class="{ show_menu:activo  }">
+            <!-- Top Navigation -->
+            <nav class="s-12 grid background-none background-primary-hightlight">
+                <!-- logo -->
+                <a href="#/" class="m-12 l-3 padding-1x logo">
+                    <img src="assets/img/logotipo.png">
+                </a>
+
+                <p class="nav-text"> <a @click="mostrarMenu()"><span></span> </a></p>
+
+                <div class="top-nav s-12 l-9">
+                    <ul class="top-ul right chevron">
+                        <li :class="{ active_item:activo1 }"><a @click="homeMenu()" href="#/">Home</a></li>
+
+                        <li :class="{ active_item:activo3 }"><a @click="servicoMenu()" href="#/agricultura">Agricultura</a></li>
+                        <li :class="{ active_item:activo4 }"><a @click="galeriaMenu()" href="#/minas">Minas</a></li>
+                        <li :class="{ active_item:activo5 }"><a @click="contactoMenu()" href="#/contato">Contactos</a></li>
+                    </ul>
+                </div>
+
+            </nav>
+        </header>
+    </div>
+
+    <div class="menu-barra"></div>
+
+</div>

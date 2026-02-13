@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos Serviços</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            height: 100vh;
+            background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #00c6ff);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+            color: white;
+        }
+        /* ANIMAÇÃO DO FUNDO */
+        
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        /* HERO */
+        
+        .hero {
+            text-align: center;
+            padding: 120px 20px 60px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #00f5a0, #00d9f5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeDown 1.2s ease;
+        }
+        
+        .hero p {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            animation: fadeUp 1.5s ease;
+        }
+        /* CONTAINER */
+        
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px 100px;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        /* CARD */
+        
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            transition: 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeUp 1s ease forwards;
+        }
+        
+        .card:hover {
+            transform: translateY(-20px) scale(1.05);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+        /* EFEITO LUZ */
+        
+        .card::after {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
+            top: -50px;
+            right: -50px;
+            transition: 0.5s;
+        }
+        
+        .card:hover::after {
+            top: -30px;
+            right: -30px;
+        }
+        /* ÍCONE */
+        
+        .icon {
+            font-size: 65px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+        
+        .card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+        /* BOTÃO */
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            background: linear-gradient(90deg, #00f5a0, #00d9f5);
+            color: #000;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.4s;
+        }
+        
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 217, 245, 0.6);
+        }
+        /* CORES ÍCONES */
+        
+        .agri {
+            color: #00f5a0;
+        }
+        
+        .mine {
+            color: #ffb347;
+        }
+        
+        .consult {
+            color: #00d9f5;
+        }
+        /* ANIMAÇÕES ENTRADA */
+        
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.3);
+            font-size: 0.9rem;
+        }
+        /* RESPONSIVO */
+        
+        @media(max-width:768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <h1>Nossos Serviços</h1>
+        <p>Inovação, tecnologia e excelência em cada projeto</p>
+    </section>
+
+    <div class="container">
+        <div class="services">
+
+            <div class="card">
+                <div class="icon agri">🌾</div>
+                <h3>Agricultura</h3>
+                <p>Produção agrícola inteligente com tecnologia moderna, sustentabilidade e alto desempenho.</p>
+                <a href="#" class="btn">Saiba Mais</a>
+            </div>
+
+            <div class="card">
+                <div class="icon mine">⛏️</div>
+                <h3>Exploração Mineira</h3>
+                <p>Exploração mineral com segurança, inovação e compromisso ambiental.</p>
+                <a href="#" class="btn">Saiba Mais</a>
+            </div>
+
+            <div class="card">
+                <div class="icon consult">📊</div>
+                <h3>Consultoria</h3>
+                <p>Planejamento estratégico e soluções empresariais para crescimento sustentável.</p>
+                <a href="#" class="btn">Saiba Mais</a>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Sua Empresa | Design Premium Animado
+    </footer>
+
+</body>
+
+</html>
