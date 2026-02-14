@@ -24,23 +24,21 @@ export default {
         });
 
 
-        var swiper = new Swiper(".mySwiper", {
+
+        const swiper = new Swiper(".mySlider", {
             loop: true,
-            speed: 1000,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false
+            },
             effect: "fade",
             fadeEffect: {
                 crossFade: true
-            },
-            autoplay: {
-                delay: 6000,
-                disableOnInteraction: false,
-            },
-            navigation: {
-                nextEl: ".next-btn",
-                prevEl: ".prev-btn",
-            },
-
+            }
         });
+
+        document.querySelector(".prev").onclick = () => swiper.slidePrev();
+        document.querySelector(".next").onclick = () => swiper.slideNext();
 
 
     },

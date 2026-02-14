@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Swiper Slider Custom</title>
+    <title>Swiper Slider Premium</title>
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -41,6 +41,7 @@
             object-fit: cover;
             transform: scale(1);
             transition: transform 6s ease;
+            will-change: transform;
         }
         
         .swiper-slide-active img {
@@ -53,9 +54,10 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.45);
             top: 0;
             left: 0;
+            z-index: 1;
         }
         /* ===== CONTEÚDO ===== */
         
@@ -69,11 +71,18 @@
             z-index: 2;
             transition: all 1s ease 0.5s;
         }
+        /* Ativo */
         
         .swiper-slide-active .content {
             opacity: 1;
         }
-        /* Animações */
+        /* ===== ANIMAÇÕES ===== */
+        
+        .fade-right,
+        .fade-left,
+        .fade-up {
+            transition: all 1s ease;
+        }
         
         .fade-right {
             transform: translateX(100px);
@@ -101,13 +110,32 @@
         
         .content h2 {
             font-size: 3rem;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         
         .content p {
             font-size: 1.2rem;
         }
-        /* ===== BOTÕES CIRCULARES VERTICAIS ===== */
+        /* ===== BOTÃO CTA ===== */
+        
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 30px;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        
+        .btn:hover {
+            background: #000;
+            color: #fff;
+            border: 1px solid #fff;
+        }
+        /* ===== BOTÕES CIRCULARES ===== */
         
         .swiper-button-next,
         .swiper-button-prev {
@@ -117,6 +145,7 @@
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(6px);
             color: #fff;
+            transition: 0.3s;
         }
         
         .swiper-button-next::after,
@@ -124,7 +153,6 @@
             font-size: 18px;
             font-weight: bold;
         }
-        /* Posicionar verticalmente */
         
         .swiper-button-next {
             right: 20px;
@@ -178,7 +206,8 @@
                 <img src="https://picsum.photos/id/1018/1200/600" />
                 <div class="content fade-right">
                     <h2>Slide 1</h2>
-                    <p>Descrição do primeiro slide com zoom e fade-right.</p>
+                    <p>Descrição do primeiro slide com zoom cinematográfico.</p>
+                    <a href="#" class="btn">Saiba Mais</a>
                 </div>
             </div>
 
@@ -186,7 +215,8 @@
                 <img src="https://picsum.photos/id/1015/1200/600" />
                 <div class="content fade-left">
                     <h2>Slide 2</h2>
-                    <p>Descrição do segundo slide com fade-left.</p>
+                    <p>Descrição do segundo slide com animação suave.</p>
+                    <a href="#" class="btn">Descobrir</a>
                 </div>
             </div>
 
@@ -194,7 +224,8 @@
                 <img src="https://picsum.photos/id/1019/1200/600" />
                 <div class="content fade-up">
                     <h2>Slide 3</h2>
-                    <p>Descrição do terceiro slide com fade-up.</p>
+                    <p>Descrição do terceiro slide com efeito premium.</p>
+                    <a href="#" class="btn">Ver Mais</a>
                 </div>
             </div>
 
@@ -212,7 +243,7 @@
     <script>
         var swiper = new Swiper(".mySwiper", {
             loop: true,
-            speed: 800, // mais suave
+            speed: 1000,
             effect: "fade",
             fadeEffect: {
                 crossFade: true
